@@ -3,34 +3,34 @@
 	<Row>
 		<Entry>
 			<Name>ffg</Name>
-			<Type>salt</Type>
+			<Type>SALT</Type>
 			<Value>3</Value>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
-			<Type>salt</Type>
+			<Type>WOOD</Type>
 			<Value>31</Value>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
-			<Type>salt</Type>
+			<Type>ROCK</Type>
 			<Value>32</Value>
 		</Entry>
 	</Row>
 	<Row>
 		<Entry>
 			<Name>ffg</Name>
-			<Type>salt</Type>
+			<Type>OAT</Type>
 			<Value>36</Value>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
-			<Type>salt</Type>
+			<Type>SALT</Type>
 			<Value>32</Value>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
-			<Type>salt</Type>
+			<Type>ROCK</Type>
 			<Value>1</Value>
 		</Entry>
 	</Row>

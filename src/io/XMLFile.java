@@ -1,6 +1,8 @@
 package io;
 
+import hexagon.Landscape;
 import hexagon.Playfield;
+import hexagon.Resource;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -20,15 +22,19 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 
+
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class FileWrite {
+public class XMLFile {
 
-	public void readXmlFile(){
+	public Landscape[][] readXmlFile(Playfield p){
+		
+		Landscape[][] map=new Landscape[12][8];
 
 		try {
 			File fXmlFile = new File("map.xml");
@@ -49,12 +55,13 @@ public class FileWrite {
 
 			System.out.println("Found rows: "+nList.getLength());
 
-
 			//
 
-			for (int temp = 0; temp < nList.getLength(); temp++) {
+			for (int row = 0; row < nList.getLength(); row++) {
+				
+				
 
-				Node nNode = nList.item(temp);
+				Node nNode = nList.item(row);
 
 				NodeList entryList = ((Element)nNode).getElementsByTagName("Entry");
 				System.out.println("Found entries: "+entryList.getLength());
@@ -73,9 +80,19 @@ public class FileWrite {
 						String type=e2Element.getElementsByTagName("Type").item(0).getTextContent();
 						String value=e2Element.getElementsByTagName("Value").item(0).getTextContent();
 
+						
+						
+						Resource res = Resource.valueOf(type);
+						if(res==Resource.SALT){
+							System.out.println("We are SALT-kings!");
+						}
+						
 						System.out.print("Name " + name);
 						System.out.print("Value " + value);
 						System.out.println("Type " + type);
+						
+						map[entry][row]=new Landscape(p,res,Integer.parseInt(value));
+						
 					}
 
 					//**create the new Landscape here
@@ -91,7 +108,7 @@ public class FileWrite {
 			e.printStackTrace();
 			System.out.println("FileWrite: Something wrong with the parsing of XML file");
 		}
-		//return the landscape array
+		return map;
 		//return returnList;
 	}
 

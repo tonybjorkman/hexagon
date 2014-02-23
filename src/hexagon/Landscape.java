@@ -12,25 +12,32 @@ public class Landscape {
 		System.out.println("Landscape created"+(++p.numOfLS));
 		this.playfield=p;
 	}
+	
+	public Landscape(Playfield p,Resource res,int value) {
+		System.out.println("Landscape num: "+(++p.numOfLS) + " value: "+value+" Resource: "+res.name());
+		this.playfield=p;
+		this.value=value;
+		this.resource=res;
+	}
 
-	private Playfield playfield;
+	//keep track of the playfield so its fields can be reached.
+	private Playfield playfield; 
 	Resource resource;
 	int position;
 	Color color;
+	int value;
 	
 	public void setColor(Color color) {
 		this.color = color;
 	}
 
-	public void setResource(String resource){
-
-		this.resource = new Resource(resource);
-		
+	//Resource is Enum. like Resource.SALT, Resource.OAT etc.
+	public void setResource(Resource resource){
+		this.resource = resource;
 	}
 	
 	public Resource getResource(){
 		return this.resource;
-		
 	}
 	
 	public Color getColor(){

@@ -2,7 +2,7 @@ package hexagon;
 
 
 
-import io.FileWrite;
+import io.XMLFile;
 
 import java.awt.Canvas;
 import java.awt.Color;
@@ -46,28 +46,15 @@ public class Starter extends Canvas {
 		start.frame.setVisible(true);
 		//start.load();
 		
-		//playfield = new Playfield();
+		playfield = new Playfield();
 		
-		new FileWrite().readXmlFile();
+		playfield.Pfield=new XMLFile().readXmlFile(playfield);
 		
-		//start.runs();
+		start.runs();
 
 
 	}
 
-	//loads image from file
-	/*private void load() {
-		try{
-
-			BufferedImage image = ImageIO.read(new File("hej.png"));
-			int w = image.getWidth();
-			int h = image.getHeight();
-			image.getRGB(0, 0,w,h,pixels,0,w);
-			System.out.println(""+pixels);
-		} catch(IOException e) {
-			e.printStackTrace();
-		}
-	}*/
 
 	public void runs() {
 		long lastTime=System.nanoTime();
@@ -126,7 +113,7 @@ public class Starter extends Canvas {
 				
 				int iny=y*(dia-5)+odd;
 				int inx=x*(dia-10);
-				
+				if(playfield.Pfield[x][y]!=null)
 				g.fillPolygon(playfield.Pfield[x][y].getPolygon(inx,iny));
 				
 			}

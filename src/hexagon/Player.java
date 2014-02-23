@@ -6,7 +6,7 @@ import java.util.List;
 public class Player {
 	
 	List<Position> PositionsConquered = new ArrayList<Position>(); //List is better than array here to have it dynamic.
-	List<Resource> CardsOwned = new ArrayList<Resource>();
+	List<Res> CardsOwned = new ArrayList<Res>();
 	
 	
 	public Player(Position Pos1, Position Pos2, Position Pos3){ //3 Start positions, possibly not include to have it 
@@ -20,13 +20,14 @@ public class Player {
 			if (neighbours[i] == null){
 				break;
 			}
-			CardsOwned.add(neighbours[i].getResource());
+			//commented, changed resource to enum so doesnt work
+			//CardsOwned.add(neighbours[i].getResource());
 		}
 		
 	}
 	
 	
-	public Player(Position Pos1, Position Pos2, Position Pos3, Resource card1, Resource card2, Resource card3){
+	public Player(Position Pos1, Position Pos2, Position Pos3, Res card1, Res card2, Res card3){
 		//Used if you play by the noob rules which puts the three first settlements on prepositioned positions.
 		
 		PositionsConquered.add(Pos1);
@@ -46,7 +47,7 @@ public class Player {
 		
 	}
 	
-	public void AddCards(Resource card){
+	public void AddCards(Res card){
 		CardsOwned.add(card);
 	}
 	

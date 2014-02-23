@@ -15,14 +15,14 @@ public class Player {
 		PositionsConquered.add(Pos2);
 		PositionsConquered.add(Pos3);
 		
-		Landscape[] neighbours = Pos3.getNeighbours();
+		/*Landscape[] neighbours = Pos3.getNeighbours();
 		for (int i=0; i<3; i++){
 			if (neighbours[i] == null){
 				break;
 			}
 			//commented, changed resource to enum so doesnt work
 			//CardsOwned.add(neighbours[i].getResource());
-		}
+		}*/
 		
 	}
 	

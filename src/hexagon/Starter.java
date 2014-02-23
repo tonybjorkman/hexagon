@@ -47,8 +47,7 @@ public class Starter extends Canvas {
 		//start.load();
 		
 		playfield = new Playfield();
-		
-		playfield.Pfield=new XMLFile().readXmlFile(playfield);
+		playfield=new XMLFile().readXmlFile(playfield);
 		
 		start.runs();
 
@@ -118,6 +117,17 @@ public class Starter extends Canvas {
 				g.fillPolygon(playfield.Pfield[x][y].getPolygon(inx,iny));
 				}
 				
+			}
+		}
+		
+		System.out.println(""+playfield.positions[0].length+" and "+playfield.positions.length);
+		
+		for(int y=0;y<playfield.positions[0].length;y++){
+			for(int x=0;x<playfield.positions.length;x++){
+				if(playfield.positions[x][y]!=null){
+					g.setColor(playfield.positions[x][y].getColor());
+					g.fillPolygon(playfield.positions[x][y].getPolygon());
+					}
 			}
 		}
 

@@ -2,6 +2,7 @@ package io;
 
 import hexagon.Landscape;
 import hexagon.Playfield;
+import hexagon.Position;
 import hexagon.Resource;
 
 import java.io.File;
@@ -24,6 +25,7 @@ import javax.xml.transform.stream.StreamResult;
 
 
 
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -32,8 +34,8 @@ import org.xml.sax.SAXException;
 
 public class XMLFile {
 
-	public Landscape[][] readXmlFile(Playfield p){
-		
+	public Playfield readXmlFile(Playfield p){
+
 		Landscape[][] map=new Landscape[12][8];
 
 		try {
@@ -48,18 +50,13 @@ public class XMLFile {
 
 			System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
 
-			//Make a list of each "Row" child
-			NodeList nList = doc.getElementsByTagName("Row");
-
-
-
+			/*
+			 * START LOOKING FOR RESOURCES
+			 */
+			NodeList nList = doc.getElementsByTagName("Row");			
 			System.out.println("Found rows: "+nList.getLength());
 
-			//
-
 			for (int row = 0; row < nList.getLength(); row++) {
-				
-				
 
 				Node nNode = nList.item(row);
 
@@ -69,8 +66,6 @@ public class XMLFile {
 				for (int entry = 0; entry < entryList.getLength(); entry++) {
 
 					Node entryNode = entryList.item(entry);
-
-
 					System.out.println("\nCurrent Element :" + entryNode.getNodeName());
 
 					if (entryNode.getNodeType() == Node.ELEMENT_NODE) {
@@ -80,25 +75,51 @@ public class XMLFile {
 						String type=e2Element.getElementsByTagName("Type").item(0).getTextContent();
 						String value=e2Element.getElementsByTagName("Value").item(0).getTextContent();
 
-						
-						
 						Resource res = Resource.valueOf(type);
 						if(res==Resource.SALT){
 							System.out.println("We are SALT-kings!");
 						}
-						
-						System.out.print("Name " + name);
-						System.out.print("Value " + value);
-						System.out.println("Type " + type);
-						
-						map[entry][row]=new Landscape(p,res,Integer.parseInt(value));
-						
-					}
 
-					//**create the new Landscape here
+						p.Pfield[entry][row]=new Landscape(p,res,Integer.parseInt(value));
+					}
 				}
-			}
-			//return returnList;
+			} //End of main for-loop resources
+
+			/*
+			 * START LOOKING FOR POSITIONS
+			 */
+			NodeList cityList = doc.getElementsByTagName("City");			
+			System.out.println("Found Cities: "+cityList.getLength());
+
+			for (int row = 0; row < cityList.getLength(); row++) {
+
+				Node cityNode = cityList.item(row);
+
+
+				
+					if (cityNode.getNodeType() == Node.ELEMENT_NODE) {
+
+						Element e2Element = (Element) cityNode;
+						String name=e2Element.getElementsByTagName("Name").item(0).getTextContent();
+						String posX=e2Element.getElementsByTagName("PosX").item(0).getTextContent();
+						String posY=e2Element.getElementsByTagName("PosY").item(0).getTextContent();
+						String gold=e2Element.getElementsByTagName("Gold").item(0).getTextContent();
+						String starter=e2Element.getElementsByTagName("Start").item(0).getTextContent();
+
+						int intX = Integer.parseInt(posX);
+						int intY = Integer.parseInt(posY);
+						int intGold = Integer.parseInt(gold);
+						boolean start = Boolean.parseBoolean(starter);
+
+						p.positions[intX][intY]=new Position(intX,intY, intGold,start,name);
+						//map[entry][row]=new Landscape(p,res,Integer.parseInt(value));
+					}
+				
+			} //End of main for-loop resources
+
+
+
+
 
 		}catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -108,7 +129,7 @@ public class XMLFile {
 			e.printStackTrace();
 			System.out.println("FileWrite: Something wrong with the parsing of XML file");
 		}
-		return map;
+		return p;
 		//return returnList;
 	}
 

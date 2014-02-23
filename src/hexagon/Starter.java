@@ -24,6 +24,7 @@ public class Starter extends Canvas {
 	//accessing image
 	private int[] pixels = ((DataBufferInt)image.getRaster().getDataBuffer()).getData();
 	JFrame frame;
+	private static Playfield playfield;
 
 	public Starter(){
 		frame = new JFrame();
@@ -42,6 +43,9 @@ public class Starter extends Canvas {
 		start.frame.setLocationRelativeTo(null);
 		start.frame.setVisible(true);
 		//start.load();
+		
+		playfield = new Playfield();
+		
 		start.runs();
 
 
@@ -109,11 +113,18 @@ public class Starter extends Canvas {
 		//sets size of hexagons
 		int dia=60;
 
-		
-		for(int y=0;y*dia+dia/2<height;y++){
-			for(int x=0;x*dia<width;x++){
+		//iterate through each landscape stored in playfield and draw it
+		for(int y=0;y<playfield.Pfield[0].length;y++){
+			for(int x=0;x<playfield.Pfield.length;x++){
+				//is x odd, then draw it half a diameter down
 				int odd=((x & 1) == 0)?0:(dia-5)/2;
-				drawHexa(g,x*(dia-10),y*(dia-5)+odd,dia);
+				
+				
+				int iny=y*(dia-5)+odd;
+				int inx=x*(dia-10);
+				
+				g.fillPolygon(playfield.Pfield[x][y].getPolygon(inx,iny));
+				
 			}
 		}
 
@@ -123,25 +134,8 @@ public class Starter extends Canvas {
 	}
 
 	//draw hexagon on position x,y with radius
-	private void drawHexa(Graphics g,int x, int y,int dia){
+	
 
-		//360/6=60
-		//radie
-		int radie=dia/2;
-		double radians = (2*Math.PI/6);
-		int xa[]=new int[6];
-		int ya[]=new int[6];
-		
-		//build polygons in the shape of hexagons
-		for(int i=0;i < 6;i++){
-			double rad=i*radians;
-			xa[i]=(int)(radie*Math.cos(rad))+x+radie;
-			ya[i]=(int)(radie*Math.sin(rad))+y+radie;
-		}
-		//System.out.println("x:"+x+"y:"+y);
-		Polygon p = new Polygon(xa,ya,6);
-		g.fillPolygon(p);
-	}
 
 
 }

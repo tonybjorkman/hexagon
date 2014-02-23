@@ -19,8 +19,8 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 
 public class Starter extends Canvas {
-	private int width=600;
-	private int height=480;
+	private int width=800;
+	private int height=600;
 	//making image
 	private BufferedImage image = new BufferedImage(90,87,BufferedImage.TYPE_INT_RGB);
 	//accessing image
@@ -30,7 +30,7 @@ public class Starter extends Canvas {
 
 	public Starter(){
 		frame = new JFrame();
-		Dimension size = new Dimension(600,480);
+		Dimension size = new Dimension(width,height);
 		setPreferredSize(size); //method inside Canvas
 	}
 
@@ -95,26 +95,28 @@ public class Starter extends Canvas {
 		//apply the buffer to a graphics object
 		Graphics g = bs.getDrawGraphics();
 		//All graphics that needs to be displayed is displayed here.
-		g.setColor(Color.WHITE);
+		g.setColor(new Color(90,90,190));
 		g.fillRect(0, 0, width, height);
 		
 
 		g.setColor(Color.GREEN);
 
 		//sets size of hexagons
-		int dia=60;
+		int dia=80;
 
 		//iterate through each landscape stored in playfield and draw it
 		for(int y=0;y<playfield.Pfield[0].length;y++){
 			for(int x=0;x<playfield.Pfield.length;x++){
 				//is x odd, then draw it half a diameter down
-				int odd=((x & 1) == 0)?0:(dia-5)/2;
+				int odd=((x & 1) == 0)?0:(dia-8)/2;
 				
-				
-				int iny=y*(dia-5)+odd;
-				int inx=x*(dia-10);
-				if(playfield.Pfield[x][y]!=null)
+				//Select where it should paint in the polygon in x and y
+				int iny=y*(dia-8)+odd;
+				int inx=x*(dia-16);
+				if(playfield.Pfield[x][y]!=null){
+				g.setColor(playfield.Pfield[x][y].getColor());
 				g.fillPolygon(playfield.Pfield[x][y].getPolygon(inx,iny));
+				}
 				
 			}
 		}

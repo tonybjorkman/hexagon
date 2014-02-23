@@ -41,11 +41,22 @@ public class Landscape {
 	}
 	
 	public Color getColor(){
-		return this.color;
+		if(resource == Resource.SALT)
+			return Color.WHITE;
+		else if(resource == Resource.WOOD)
+			return new Color(8,105,8);
+		else if(resource == Resource.OAT)
+			return Color.YELLOW;
+		else if(resource == Resource.ROCK)
+			return Color.DARK_GRAY;
+		else if(resource == Resource.SHEEP)
+			return Color.GREEN;
+		else
+			return Color.BLUE;
 	}
 	
 	public Polygon getPolygon(int x,int y){
-		int dia=60;
+		int dia=80;
 		int radie=dia/2;
 		double radians = (2*Math.PI/6);
 		int xa[]=new int[6];

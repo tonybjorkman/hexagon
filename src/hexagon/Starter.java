@@ -2,6 +2,8 @@ package hexagon;
 
 
 
+import io.FileWrite;
+
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -44,9 +46,11 @@ public class Starter extends Canvas {
 		start.frame.setVisible(true);
 		//start.load();
 		
-		playfield = new Playfield();
+		//playfield = new Playfield();
 		
-		start.runs();
+		new FileWrite().readXmlFile();
+		
+		//start.runs();
 
 
 	}

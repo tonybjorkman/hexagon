@@ -9,6 +9,9 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Polygon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
@@ -16,7 +19,12 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class Starter extends Canvas {
 	private int width=800;
@@ -39,12 +47,62 @@ public class Starter extends Canvas {
 		Starter start = new Starter();
 		start.frame.setResizable(false);
 		start.frame.setTitle("Megame");
-		start.frame.add(start);//adds the Canvas the frame.
+		
+		JLabel psalt = new JLabel("Points for salt");
+		JTextField tsalt = new JTextField();
+		
+		JLabel poat = new JLabel("Points for oat");
+		JTextField toat = new JTextField();
+		
+		JLabel prock = new JLabel("Points for rock");
+		JTextField trock = new JTextField();
+		
+		JButton calc = new JButton("Calculate");
+		
+		JPanel rightPanel = new JPanel();
+		JPanel label = new JPanel();
+		rightPanel.setLayout(new BoxLayout(rightPanel,BoxLayout.PAGE_AXIS));
+		rightPanel.add(psalt);
+		rightPanel.add(tsalt);
+		rightPanel.add(poat);
+		rightPanel.add(toat);
+		rightPanel.add(prock);
+		rightPanel.add(trock);
+		rightPanel.add(calc);
+		label.add(start);
+		label.add(rightPanel);
+		start.frame.add(label);//adds the Canvas the frame.
 		start.frame.pack();
 		start.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		start.frame.setLocationRelativeTo(null);
 		start.frame.setVisible(true);
 		//start.load();
+		
+		start.addMouseListener(new MouseAdapter(){
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+				for(int y=0;y<playfield.positions[0].length;y++){
+					for(int x=0;x<playfield.positions.length;x++){
+						if(playfield.positions[x][y]!=null && playfield.positions[x][y].contains(e.getPoint())){
+							//playfield.positions[x][y].selected=true;
+							playfield.setSelected(playfield.positions[x][y]);
+							System.out.println("hej");
+						}
+					}
+				}
+				
+				//Position.pixelToIndex(e.getX(), e.getY());
+				System.out.print("x:"+e.getX()+" y:"+e.getY());
+			}
+
+			
+		});
+		
+		
+		
 		
 		playfield = new Playfield();
 		playfield=new XMLFile().readXmlFile(playfield);
@@ -120,13 +178,17 @@ public class Starter extends Canvas {
 			}
 		}
 		
-		System.out.println(""+playfield.positions[0].length+" and "+playfield.positions.length);
 		
 		for(int y=0;y<playfield.positions[0].length;y++){
 			for(int x=0;x<playfield.positions.length;x++){
 				if(playfield.positions[x][y]!=null){
-					g.setColor(playfield.positions[x][y].getColor());
+					if(playfield.positions[x][y]==playfield.selected)
+						g.setColor(Color.YELLOW);
+					else
+						g.setColor(playfield.positions[x][y].getColor());
+					
 					g.fillPolygon(playfield.positions[x][y].getPolygon());
+						
 					}
 			}
 		}

@@ -6,6 +6,7 @@ public class Playfield {
 	public Landscape[][] Pfield = new Landscape[12][8]; //Change later
 	public Position[][] positions = new Position[13][17];
 	public static int numOfLS;
+	public Position selected;
 
 	public Playfield(){
 		//Initialize the playfield, put resources on correct places etc.
@@ -15,7 +16,14 @@ public class Playfield {
 			positions[i][j]=null;	
 			}
 		}
-			
+	}
+	
+	public void setSelected(Position pos){
+		selected=pos;
+	}
+	
+	public void getObjectAtPosition(int x,int y){
+		
 		
 	}
 	

@@ -1,36 +1,68 @@
-package hexagon;
+package model;
 
 import java.awt.Color;
 import java.awt.Point;
 import java.awt.Polygon;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JComponent;
 
 
 /*
  * Position is where a Factory can be build
+ * 
+ * 
  */
-public class Position extends JComponent implements MouseListener {
+public class City extends JComponent implements MouseListener {
 	//Landscape Neighbours[] = new Landscape[3];
-
 
 	private int posX;
 	private int posY;
+	public Point point;
 	private int gold;
 	private String name;
 	private boolean start;
 	public boolean selected;
+	private Playfield playfield;
+	public ArrayList<Landscape> fields; //the neighboring fields
+	public static final int RADIUS=15;
 
-	public Position(int intX, int intY, int intGold, boolean start, String name) {
+	public City(Playfield playfield,Point point, int intGold, boolean start, String name) {
 		// TODO Auto-generated constructor stub
-		posX=intX;
-		posY=intY;
+		this.playfield=playfield;
+		this.point=this.indexToPixel(point);
 		gold=intGold;
 		this.start=start;
 		this.name=name;
 		System.out.println("Pos created: "+name+" posx: "+posX+" posY: "+posY+" gold: "+gold);
+		this.fields=new ArrayList<Landscape>();
+		//fields=getNeighborFields();
+	}
+
+	public ArrayList<Landscape> getNeighborFields(){
+		
+		//if(fields.size()!=0)
+			//return (ArrayList<Landscape>)fields;
+		fields.clear();
+		//ArrayList<Landscape> list = new ArrayList<Landscape>();
+		int found=0;
+		for(int i=0;i<playfield.lands.length;i++){
+			for(int j=0;j<playfield.lands[0].length;j++){
+
+				if(found > 2 )
+					break;
+					if(this.contains(playfield.lands[i][j].point,Landscape.RADIUS+10)){
+						fields.add(playfield.lands[i][j]);
+						found++;
+					}
+			}
+		}
+		System.out.println("Found "+found+"neighbors");
+
+		return fields;
 	}
 
 	public void setNeighbours(Landscape neighbour1, Landscape neighbour2, Landscape neighbour3){
@@ -46,86 +78,72 @@ public class Position extends JComponent implements MouseListener {
 	}
 
 	public static void pixelToIndex(int pixX,int pixY){
-		
 
-		//xIn=100
-		
-		//jämn rad: out=(xIn*40+3) >> (out-3)/40 = xIn
-		
-		//förenklat: out=(xIn/2)*49 >> (out/49)*2=xIn
-		
-		//i rätt ordning
-		//xIn=(out-3)/40 - (out/49)*2
-		
-		//trim pixY
-		//pixY-=15;
-		
 		double yIn= ((pixY-5)/35.6);	
 		double B=42,A=84;
 		double xIn1=0;
 		double xIn2=0;
-		
+
 		//pixX-=20;
 
 		int overlap;
 		int shift=0;
-		
+
 		if(((int)yIn & 1)==0){  //hexagoner som börjar innåt och med litet steg
-			
+
 			//shift pixelcount right 
 			pixX-=20;
-			
+
 			overlap = (int) ((pixX)%(B+A));
-			
+
 			if(overlap>=B){
-				   //antal serier      +    100px/seriePx-
-			xIn1 = 2*(pixX/((int)(B+A)));
-			xIn2=((overlap-B)/A)+1;
+				//antal serier      +    100px/seriePx-
+				xIn1 = 2*(pixX/((int)(B+A)));
+				xIn2=((overlap-B)/A)+1;
 			}
 			else{
-			xIn1 = 2*(pixX/((int)(B+A)));
-			xIn2 =(overlap/B);
+				xIn1 = 2*(pixX/((int)(B+A)));
+				xIn2 =(overlap/B);
 			}
 			System.out.println("Xin2:"+xIn2 + "top?:"+((pixX%(B+A))>=B));
 			xIn2+=xIn1;
 		}
 		else{
-			
+
 			overlap = (int) (pixX%(B+A));
 
 			double Bholder=B;
 			B=A;
 			A=Bholder;
-			
+
 			if(overlap>=B){
-				   //antal serier      +    100px/seriePx-
-			xIn1 = 2*(pixX/((int)(B+A)));
-			xIn2=((overlap-B)/A)+1;
+				//antal serier      +    100px/seriePx-
+				xIn1 = 2*(pixX/((int)(B+A)));
+				xIn2=((overlap-B)/A)+1;
 			}
 			else{
-			xIn1 = 2*(pixX/((int)(B+A)));
-			xIn2 =(overlap/B);
+				xIn1 = 2*(pixX/((int)(B+A)));
+				xIn2 =(overlap/B);
 			}
 			System.out.println("Xin2:"+xIn2 + "top?:"+((pixX%(B+A))>=B));
 			xIn2+=xIn1;
 		}
-		
+
 		//int xIn=(int)((fx-3)/40.0);
-		
+
 		System.out.println("fx="+xIn2+" fy="+yIn);
-		
+
 		//lets filter the indexes and see if they are really close to a int index.
-		
-		
-		
-		
+
+
+
+
 	}
 
-	public Point indexToPixel(){
-		return indexToPixel(posX,posY);
-	}
-	
-	public Point indexToPixel(int xIn,int yIn){
+
+	public Point indexToPixel(Point pt){
+		int yIn=pt.y;
+		int xIn=pt.x;
 		double fx;
 		double fy=yIn*35.6+7;	
 
@@ -142,40 +160,22 @@ public class Position extends JComponent implements MouseListener {
 		int y=(int)fy;
 		return new Point(x,y);
 	}
-	
-	public boolean contains(Point point){
-		
-		Point place = indexToPixel();
-		
+
+	public boolean contains(Point pt,int radius){
+
+		//radius = search radius
+
 		//check if the point is close enough to this Position
-		if(Math.abs(point.distance(place))<15){
+		if(Math.abs(pt.distance(this.point))<radius){
+			//getNeighborFields();
 			return true;
-			
 		}
 		else
-		return false;
-		
+			return false;
 	}
-	
-	
+
 
 	public Polygon getPolygon(){
-		//set the startposition (0,0) m-value adjusts start. k-value adjust multitude 
-		/*double fx=posX*40+3;
-		double fy=posY*35.6-8;	
-
-		if((posY & 1)==0){
-			fx+=((posX)/2)*49;
-		}
-		else{
-			fx=posX*45-12;
-
-			fx+=((posX+1)/2)*37;
-
-		}
-		int x=(int)fx;
-		int y=(int)fy;*/
-		Point point = indexToPixel();
 
 		int dia=30;
 		int radie=dia/2;
@@ -202,25 +202,25 @@ public class Position extends JComponent implements MouseListener {
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 

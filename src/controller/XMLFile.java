@@ -1,10 +1,6 @@
-package io;
+package controller;
 
-import hexagon.Landscape;
-import hexagon.Playfield;
-import hexagon.Position;
-import hexagon.Resource;
-
+import java.awt.Point;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -26,6 +22,17 @@ import javax.xml.transform.stream.StreamResult;
 
 
 
+
+
+
+
+
+
+import model.Landscape;
+import model.Playfield;
+import model.City;
+import model.Resource;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -34,7 +41,7 @@ import org.xml.sax.SAXException;
 
 public class XMLFile {
 
-	public Playfield readXmlFile(Playfield p){
+	public Playfield readXmlFile(Playfield playf){
 
 		Landscape[][] map=new Landscape[12][8];
 
@@ -74,13 +81,14 @@ public class XMLFile {
 						String name=e2Element.getElementsByTagName("Name").item(0).getTextContent();
 						String type=e2Element.getElementsByTagName("Type").item(0).getTextContent();
 						String value=e2Element.getElementsByTagName("Value").item(0).getTextContent();
+						String chip=e2Element.getElementsByTagName("Chip").item(0).getTextContent();
 
 						Resource res = Resource.valueOf(type);
-						if(res==Resource.SALT){
-							System.out.println("We are SALT-kings!");
-						}
-
-						p.Pfield[entry][row]=new Landscape(p,res,Integer.parseInt(value));
+						boolean isChip=Boolean.parseBoolean(chip);
+						
+						Point indexes=new Point(entry,row);
+						
+						playf.lands[entry][row]=new Landscape(playf,res,Integer.parseInt(value),indexes,isChip);
 					}
 				}
 			} //End of main for-loop resources
@@ -111,8 +119,7 @@ public class XMLFile {
 						int intGold = Integer.parseInt(gold);
 						boolean start = Boolean.parseBoolean(starter);
 
-						p.positions[intX][intY]=new Position(intX,intY, intGold,start,name);
-						//map[entry][row]=new Landscape(p,res,Integer.parseInt(value));
+						playf.cities[intX][intY]=new City(playf,new Point(intX,intY), intGold,start,name);
 					}
 				
 			} //End of main for-loop resources
@@ -129,7 +136,7 @@ public class XMLFile {
 			e.printStackTrace();
 			System.out.println("FileWrite: Something wrong with the parsing of XML file");
 		}
-		return p;
+		return playf;
 		//return returnList;
 	}
 

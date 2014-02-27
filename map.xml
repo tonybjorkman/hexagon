@@ -4,496 +4,592 @@
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>SHEEP</Type>
-			<Value>3</Value>
+			<Value>8</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>32</Value>
-		</Entry>
-				<Entry>
-			<Name>ffg</Name>
-			<Type>OCEAN</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
+		</Entry>
+		<Entry>
+			<Name>ffg</Name>
+			<Type>OCEAN</Type>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>ROCK</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>WOOD</Type>
-			<Value>31</Value>
+			<Value>3</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>SALT</Type>
-			<Value>32</Value>
+			<Value>8</Value>
+			<Chip>false</Chip>
 		</Entry>
 	</Row>
 	<Row>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>SHEEP</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>SHEEP</Type>
-			<Value>31</Value>
+			<Value>11</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>WOOD</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>WOOD</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 	</Row>
 	<Row>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>SHEEP</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OAT</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>SHEEP</Type>
-			<Value>32</Value>
+			<Value>8</Value>
+			<Chip>false</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>SALT</Type>
-			<Value>3</Value>
+			<Value>9</Value>
+			<Chip>true</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>WOOD</Type>
-			<Value>31</Value>
+			<Value>4</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>SALT</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>SALT</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>WOOD</Type>
-			<Value>32</Value>
+			<Value>12</Value>
+			<Chip>false</Chip>
 		</Entry>
 	</Row>
 	<Row>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>OAT</Type>
-			<Value>3</Value>
+			<Value>2</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OAT</Type>
-			<Value>31</Value>
+			<Value>3</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>WOOD</Type>
-			<Value>32</Value>
+			<Value>2</Value>
+			<Chip>false</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>OAT</Type>
-			<Value>3</Value>
+			<Value>5</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>SALT</Type>
-			<Value>31</Value>
+			<Value>10</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OAT</Type>
-			<Value>32</Value>
+			<Value>6</Value>
+			<Chip>false</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>SALT</Type>
-			<Value>3</Value>
+			<Value>4</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OAT</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OAT</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 	</Row>
 	<Row>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>WOOD</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>WOOD</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>SHEEP</Type>
-			<Value>31</Value>
+			<Value>5</Value>
+			<Chip>true</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>ROCK</Type>
-			<Value>32</Value>
+			<Value>8</Value>
+			<Chip>false</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>WOOD</Type>
-			<Value>3</Value>
+			<Value>10</Value>
+			<Chip>true</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>ROCK</Type>
-			<Value>31</Value>
+			<Value>12</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>ROCK</Type>
-			<Value>32</Value>
+			<Value>9</Value>
+			<Chip>true</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>OAT</Type>
-			<Value>3</Value>
+			<Value>2</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>ROCK</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>ROCK</Type>
-			<Value>32</Value>
+			<Value>2</Value>
+			<Chip>false</Chip>
 		</Entry>
 	</Row>
 	<Row>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>SALT</Type>
-			<Value>3</Value>
+			<Value>6</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>SHEEP</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>ROCK</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>WOOD</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>SALT</Type>
-			<Value>31</Value>
+			<Value>3</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>OAT</Type>
-			<Value>3</Value>
+			<Value>4</Value>
+			<Chip>true</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>WOOD</Type>
-			<Value>31</Value>
+			<Value>6</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>WOOD</Type>
-			<Value>32</Value>
+			<Value>12</Value>
+			<Chip>false</Chip>
 		</Entry>
-				<Entry>
+		<Entry>
 			<Name>ffg</Name>
 			<Type>ROCK</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OAT</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>SHEEP</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 	</Row>
 	<Row>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OAT</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>SHEEP</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>SALT</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>SHEEP</Type>
-			<Value>32</Value>
+			<Value>12</Value>
+			<Chip>false</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>ROCK</Type>
-			<Value>31</Value>
+			<Value>6</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 	</Row>
 	<Row>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+		<Chip>false</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+		<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>SHEEP</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+		<Chip>false</Chip>
 		</Entry>
 				<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>3</Value>
+			<Value>0</Value>
+		<Chip>false</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>SHEEP</Type>
-			<Value>31</Value>
+			<Value>0</Value>
+			<Chip>true</Chip>
 		</Entry>
 		<Entry>
 			<Name>ffg</Name>
 			<Type>OCEAN</Type>
-			<Value>32</Value>
+			<Value>0</Value>
+			<Chip>false</Chip>
 		</Entry>
 	</Row>
 	

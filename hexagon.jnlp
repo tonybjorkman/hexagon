@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" codebase="file://C:\Users\user\workspace\hexagon" href="hexagon.jnlp">
+<information>
+	<title>Me titly</title>
+	<vendor>Tony</vendor>
+</information>
+
+<resources>
+<j2se version="1,6+" href="http://java.sun.com/products/autodl/j2se" />
+<jar href="hexagon.jar" main="true" />
+</resources>
+<application-desc main-class="view.Main"> </application-desc>
+
+</jnlp>

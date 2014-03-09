@@ -1,10 +1,14 @@
 package controller;
 
 import java.awt.Point;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +21,10 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+
+
+
+
 
 
 
@@ -46,7 +54,12 @@ public class XMLFile {
 		Landscape[][] map=new Landscape[12][8];
 
 		try {
-			File fXmlFile = new File("map.xml");
+			//File fXmlFile = new File("http://localhost/java/map.xml");
+
+
+	        //URL oracle = new URL("http://localhost/java/map.xml");
+	        InputStream fXmlFile = new URL("http://localhost/java/map.xml").openStream();
+			
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(fXmlFile);

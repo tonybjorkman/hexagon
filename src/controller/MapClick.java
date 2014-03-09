@@ -4,6 +4,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
+import javax.swing.JPopupMenu;
+
 import view.GUI;
 import view.LandscapeMenu;
 import view.PlayCanvas;
@@ -36,10 +38,14 @@ public class MapClick extends MouseAdapter {
 					
 					Landscape land=pc.playfield.lands[x][y];
 					
-					if(e.getButton()==MouseEvent.BUTTON3 && land.isChip()){
+					if(e.getButton()==MouseEvent.BUTTON1 && land.isChip()){
+						
+						//makes the menu work together with the heavy canvas
+						JPopupMenu.setDefaultLightWeightPopupEnabled( false );
+
 						new LandscapeMenu(pc.playfield,e,pc.playfield.lands[x][y]);
+						//pc.render();
 						//Open a Landscape menu
-					System.out.println("Touching Landscape, right at ya!");
 					}
 				}
 			}

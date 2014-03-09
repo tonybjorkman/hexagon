@@ -14,6 +14,7 @@ public class Computer {
 	double rockValue=1;
 	double sheepValue=1;
 	double woodValue=1;
+	double goldValue=1;
 	private ChipStock chipStock;
 
 	public Computer(ChipStock chip){
@@ -22,8 +23,27 @@ public class Computer {
 
 
 	public String getCalculatedPoints(City p){
+		double value;
 
+		value=getValuesOfLands(p);
+		value+=getValuesOfGold(p);
+		
+		return ""+Math.round(value);
+	}
+	
+	private double getValuesOfGold(City p) {
+		// TODO Auto-generated method stub
+				
+		if(p.getGold()==0)
+		return 0;
+		else
+			return (double) p.getGold()*goldValue;
+	}
+
+
+	private double getValuesOfLands(City p){
 		double value=0;
+
 		if(p.fields!=null){
 			for(Landscape land: p.fields){
 				double diceChance;
@@ -36,7 +56,8 @@ public class Computer {
 				}
 			}
 		}
-		return ""+Math.round(value);
+		return value;
+		
 	}
 
 	private double calculateLandValue(Resource resource,double percent){
@@ -58,12 +79,13 @@ public class Computer {
 
 	}
 
-	public void setResMulti(double rock,double salt,double oat,double sheep,double wood){
+	public void setResMulti(double rock,double salt,double oat,double sheep,double wood,double gold){
 		rockValue=rock;
 		saltValue=salt;
 		oatValue=oat;
 		sheepValue=sheep;
 		woodValue=wood;
+		goldValue=gold;
 	}
 
 	private double getDicePercent(int d){

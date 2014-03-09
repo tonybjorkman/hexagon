@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
 /*
  * Keeps track of which Chips is available for each landscape.
  */
@@ -21,6 +24,8 @@ public class ChipStock {
 	//värden som är lediga kan lagras i en separat lista 
 	
 	//Cases:2 - Ta bort en chip från en position
+	
+	private List<ChangeListener> listeners;
 	//
 	private List<Integer> AsaltChips;
 	private List<Integer> AwoodChips;
@@ -44,6 +49,9 @@ public class ChipStock {
 	//ska man sno en tag behövs 
 	
 	public ChipStock(){
+		
+		listeners=new ArrayList<ChangeListener>();
+		
 		Acollection = new TreeMap<Resource,List<Integer>>();
 		AsaltChips = new ArrayList<Integer>(Arrays.asList(10,11));
 		AwoodChips = new ArrayList<Integer>(Arrays.asList(9,11));
@@ -91,10 +99,19 @@ public class ChipStock {
 	public void initializeChippedLand(Landscape land) {
 		//System.out.print("hellooo");
 		Tcollection.get(land.getResource()).add(land);
+		
 	}
 
+	public void addChangeListener(ChangeListener c){
+		listeners.add(c);
+	}
 
-
+	private void notifyListeners(){
+		ChangeEvent event = new ChangeEvent(new String("change"));
+		for(ChangeListener c:listeners){
+			c.stateChanged(event);
+		}
+	}
 	
 	public int getBestChipValue(Resource r){
 		
@@ -134,6 +151,7 @@ public class ChipStock {
 			Tcollection.get(res).remove(index);
 			Acollection.get(res).add(land.getValue());
 			land.setValue(0);
+			notifyListeners();
 			return; //true=success
 		}
 		else
@@ -164,6 +182,7 @@ public class ChipStock {
 		Acollection.get(res).remove(index);
 		Tcollection.get(res).add(land);
 		land.setValue(val);
+		notifyListeners();
 		
 	}
 	

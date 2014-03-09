@@ -49,7 +49,7 @@ import model.Resource;
 
 
 
-public class PlayCanvas extends Canvas {
+public class PlayCanvas extends JPanel {
 	/**
 	 * 
 	 */
@@ -71,15 +71,16 @@ public class PlayCanvas extends Canvas {
 
 	}
 
-	public void render() {
-		BufferStrategy bs = getBufferStrategy();
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		/*BufferStrategy bs = getBufferStrategy();
 		if(bs==null){
 			createBufferStrategy(3); //tripple buffering
 			return;
-		}
+		}*/
 
 		//apply the buffer to a graphics object
-		Graphics g = bs.getDrawGraphics();
+		//Graphics g = bs.getDrawGraphics();
 		//All graphics that needs to be displayed is displayed here.
 		g.setColor(new Color(90,90,190));
 		g.fillRect(0, 0, width, height);
@@ -89,7 +90,7 @@ public class PlayCanvas extends Canvas {
 		
 		//g.drawImage(image, 40, 40, image.getWidth(),image.getHeight(),null);
 		g.dispose();//releases system resources ( removes each rendered frame)
-		bs.show();//show the buffer that has been calculated
+		//bs.show();//show the buffer that has been calculated
 	}
 
 	//draw hexagon on position x,y with radius

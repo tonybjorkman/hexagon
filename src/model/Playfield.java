@@ -80,6 +80,7 @@ public class Playfield {
 		for(int y=0;y<cities[0].length;y++){
 			for(int x=0;x<cities.length;x++){
 				if(cities[x][y]!=null){
+					
 					if(cities[x][y]==selected)
 						g.setColor(Color.YELLOW);
 					else
@@ -114,7 +115,10 @@ public class Playfield {
 					//DRAW HEXAGON
 					g.setColor(land.getColor());
 					g.fillPolygon(land.getPolygon(x,y));
+					g.setColor(Color.BLACK);
 					
+					g.drawPolygon(land.getPolygon(x, y));
+
 					
 					//TEXT FOR VALUES > 0
 					String value = Integer.toString(land.getValue());
@@ -127,6 +131,16 @@ public class Playfield {
 					if(land.isChip()){
 						int radius=50;
 					g.drawOval(posX-radius/2, posY-radius/2, radius, radius);
+					g.setColor(Color.GREEN);
+					}
+					else
+						g.setColor(Color.RED);
+
+					
+					if(land==Landscape.getSelected()){
+						
+						g.drawPolygon(land.getPolygon(x, y));
+
 					}
 					
 				}

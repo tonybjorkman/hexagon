@@ -26,6 +26,15 @@ public class City extends JComponent implements MouseListener {
 	private String name;
 	private boolean start;
 	public boolean selected;
+	
+	public int getGold() {
+		return gold;
+	}
+
+	public void setGold(int gold) {
+		this.gold = gold;
+	}
+
 	private Playfield playfield;
 	public ArrayList<Landscape> fields; //the neighboring fields
 	public static final int RADIUS=15;

@@ -19,6 +19,8 @@ public class LandscapeMenu extends JPopupMenu {
 	public LandscapeMenu(Playfield p,MouseEvent e,Landscape toLand){
 
 		//I really need the chipstock class
+		
+
 
 		List<Integer> aChips = p.chipStock.getAvailableChips(toLand.getResource());
 		List<Landscape> tChips = p.chipStock.getChippedLands(toLand.getResource());
@@ -57,7 +59,10 @@ public class LandscapeMenu extends JPopupMenu {
 
 		}
 
+
 		show(e.getComponent(),e.getX(),e.getY());
+		
+
 	}
 
 

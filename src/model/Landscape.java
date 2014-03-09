@@ -18,7 +18,7 @@ public class Landscape {
 	private int value;
 	public boolean chip;
 	public static final int RADIUS=40; //diameter of hexagons
-
+	public static Landscape selected;
 
 	public Landscape(Playfield p) {
 		System.out.println("Landscape created"+(++p.numOfLS));
@@ -117,7 +117,16 @@ public class Landscape {
 			return false;
 	}
 
+	public static void setSelected(Landscape land) {
+		// TODO Auto-generated method stub
+		selected=land;
+	}
 
+	public static Landscape getSelected() {
+		return selected;
+		// TODO Auto-generated method stub
+		
+	}
 
 
 }

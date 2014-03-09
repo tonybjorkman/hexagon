@@ -1,11 +1,19 @@
 package view;
 
+import java.applet.Applet;
+import java.awt.Dimension;
+
+import javax.swing.JApplet;
+import javax.swing.JFrame;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
 import controller.Computer;
 import controller.XMLFile;
 import model.ChipStock;
 import model.Playfield;
 
-public class Main {
+public class Main extends Applet {
 	
 	public Playfield playfield;
 	public PlayCanvas canvas;
@@ -17,6 +25,9 @@ public class Main {
 	
 	public Main(){
 		
+		/*setResizable(false);
+		setTitle("Megame");*/
+		
 		mapFile = new XMLFile();
 		chipStock = new ChipStock();
 		playfield = new Playfield(chipStock);
@@ -25,49 +36,66 @@ public class Main {
 		playfield = mapFile.readXmlFile(playfield);
 		playfield.initializeCities();  //lets the cities know which landscapes they have.
 		playfield.initializeLands(); //sets the starter chips on place
-		
+		System.out.println("playfield initialized");
+
 		canvas = new PlayCanvas(playfield,computer);
-		myGUI = new GUI(canvas,computer);
+		System.out.println("playcanvas created");
+
+		add(new GUI(canvas,computer));
+		System.out.println("playfield initialized");
 		
+
+		//pack();
+		System.out.println("after.. adding");
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+
 		
+		chipStock.addChangeListener(new ChangeListener(){
+
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("change event render");
+
+				canvas.repaint();
+				System.out.println("change event done");
+
+			}
+			
+		});
 		
-		runs();
+		firstRender();
+	}
+	
+	public void init(){
+		setSize(new Dimension(1000,680));
+
+		mainThread= new Main();
+		
 	}
 	
 	public static void main(String[] args){
 		
-		mainThread= new Main();
+		//mainThread= new Main();
 		
 
 	}
 	
-	public void runs() {
-		long lastTime=System.nanoTime();
-		long timer = System.currentTimeMillis();
-		final double ns = 1000000000/60;
-		int frames=0;
-		int updates=0;
+	public void firstRender() {
+		System.out.println("first render");
 
-		while(true){
-			//updates for game logic
-			if((System.nanoTime() - lastTime) > ns ){
-				lastTime=System.nanoTime();
-				//update();
-				updates++;
-			}
-			
-			//update for game render
-			canvas.render();
-			frames++;
+		canvas.repaint();
+		System.out.println("first render done");
 
-			//calculate fps and ups
-			if(System.currentTimeMillis() - timer > 1000){
-				timer+=1000;
-				myGUI.setTitle("fps: " + frames + " UPS: " + updates);
-				frames=0;
-				updates=0;
-			}
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		canvas.repaint();
+		
 	}
 	
 	

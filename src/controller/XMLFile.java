@@ -58,7 +58,7 @@ public class XMLFile {
 
 
 	        //URL oracle = new URL("http://localhost/java/map.xml");
-	        InputStream fXmlFile = new URL("http://localhost/java/map.xml").openStream();
+	        InputStream fXmlFile = getClass().getResource("/map.xml").openStream();
 			
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();

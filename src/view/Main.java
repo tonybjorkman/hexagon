@@ -13,7 +13,7 @@ import controller.XMLFile;
 import model.ChipStock;
 import model.Playfield;
 
-public class Main extends Applet {
+public class Main extends JFrame {
 	
 	public Playfield playfield;
 	public PlayCanvas canvas;
@@ -24,9 +24,10 @@ public class Main extends Applet {
 	private ChipStock chipStock;
 	
 	public Main(){
-		
-		/*setResizable(false);
-		setTitle("Megame");*/
+		setSize(new Dimension(1000,680));
+
+		setResizable(false);
+		setTitle("Settlers Europa Planner");
 		
 		mapFile = new XMLFile();
 		chipStock = new ChipStock();
@@ -77,7 +78,7 @@ public class Main extends Applet {
 	
 	public static void main(String[] args){
 		
-		//mainThread= new Main();
+		mainThread= new Main();
 		
 
 	}

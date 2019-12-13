@@ -54,12 +54,12 @@ public class GUI extends JPanel {
 			lgold = new JLabel("Gold:");
 
 			System.out.println("error1");
-			Icon icoSalt = new ImageIcon(getClass().getResource("/res/salt.jpg"));
-			Icon icoWood = new ImageIcon(getClass().getResource("/res/wood.jpg"));
-			Icon icoRock = new ImageIcon(getClass().getResource("/res/rock.jpg"));
-			Icon icoSheep = new ImageIcon(getClass().getResource("/res/sheep.jpg"));
-			Icon icoOat = new ImageIcon(getClass().getResource("/res/oat.jpg"));
-			Icon icoGold = new ImageIcon(getClass().getResource("/res/coins.jpg"));
+			Icon icoSalt = new ImageIcon(getClass().getResource("/salt.jpg"));
+			Icon icoWood = new ImageIcon(getClass().getResource("/wood.jpg"));
+			Icon icoRock = new ImageIcon(getClass().getResource("/rock.jpg"));
+			Icon icoSheep = new ImageIcon(getClass().getResource("/sheep.jpg"));
+			Icon icoOat = new ImageIcon(getClass().getResource("/oat.jpg"));
+			Icon icoGold = new ImageIcon(getClass().getResource("/coins.jpg"));
 
 			
 			
